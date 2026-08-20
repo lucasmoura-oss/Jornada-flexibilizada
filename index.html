@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia completo — Jornada de Trabalho Flexibilizada</title>
+<style>
+  :root{
+    --verde:#0F6E56; --verde-claro:#E1F5EE; --verde-txt:#085041;
+    --roxo:#534AB7; --roxo-claro:#EEEDFE; --roxo-txt:#3C3489;
+    --ambar:#EF9F27; --ambar-claro:#FAEEDA; --ambar-txt:#633806;
+    --cinza:#5F5E5A; --cinza-claro:#F1EFE8;
+    --borda:#D3D1C7; --texto:#2C2C2A; --texto-sec:#5F5E5A;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",Arial,Helvetica,sans-serif;color:var(--texto);line-height:1.55;background:#F5F5F2;padding:24px}
+  .folha{max-width:860px;margin:0 auto;background:#fff;border:1px solid var(--borda);border-radius:8px;padding:40px 46px}
+  header{display:flex;align-items:center;gap:16px;border-bottom:2px solid var(--verde);padding-bottom:16px;margin-bottom:22px}
+  .brasao{width:52px;height:52px;flex:0 0 52px;border:2px solid var(--verde);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--verde);font-weight:700;font-size:15px;letter-spacing:1px}
+  header .id{font-size:12px;color:var(--texto-sec);line-height:1.45}
+  header .id strong{color:var(--texto);font-size:13px}
+  h1{font-size:21px;font-weight:600;margin:0 0 4px}
+  .sub{font-size:13px;color:var(--texto-sec);margin-bottom:22px}
+  .obs{background:var(--verde-claro);border-left:4px solid var(--verde);border-radius:0 6px 6px 0;padding:13px 16px;font-size:13.5px;color:var(--verde-txt);margin-bottom:16px}
+  .obs strong{font-weight:600}
+  .leitura{font-size:12.5px;color:var(--texto-sec);margin-bottom:24px}
+  .leitura strong{color:var(--texto)}
+  .leitura a{color:var(--verde-txt)}
+  .etapa{font-size:15px;font-weight:600;color:#fff;background:var(--et,var(--verde));border-radius:6px;padding:8px 14px;margin:26px 0 6px;display:flex;align-items:center;gap:8px}
+  .etapa.roxa{background:var(--roxo)}
+  .quadro{border:1px solid var(--borda);border-radius:8px;padding:16px 18px;margin-bottom:14px}
+  .quadro h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--texto-sec);margin-bottom:10px}
+  .meta{display:grid;grid-template-columns:150px 1fr;gap:6px 14px;font-size:13px}
+  .meta dt{color:var(--texto-sec)}
+  .meta dd{color:var(--texto)}
+  .doc{border:1px solid var(--borda);border-left:4px solid var(--dc,var(--verde));border-radius:6px 6px 0 0;padding:13px 16px;margin-top:14px}
+  .doc .n{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--dc,var(--verde));color:#fff;font-size:12px;font-weight:600;margin-right:8px;vertical-align:2px}
+  .doc .tt{font-size:14.5px;font-weight:600;display:inline}
+  .doc .grid{display:grid;grid-template-columns:130px 1fr;gap:4px 14px;font-size:12.5px;margin-top:8px}
+  .doc .grid dt{color:var(--texto-sec)}
+  .doc .grid dd{color:var(--texto)}
+  .doc .mod{font-family:"Consolas","Courier New",monospace;font-size:12px;background:var(--cinza-claro);padding:1px 6px;border-radius:4px}
+  .badge{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 9px;border-radius:20px}
+  .b-verde{background:var(--verde-claro);color:var(--verde-txt)}
+  .b-roxo{background:var(--roxo-claro);color:var(--roxo-txt)}
+  .b-cinza{background:var(--cinza-claro);color:var(--cinza)}
+  .seta{text-align:center;color:var(--borda);font-size:20px;line-height:1;padding:4px 0}
+  .portao{background:var(--ambar-claro);border:1px solid var(--ambar);border-radius:8px;padding:13px 18px;text-align:center;margin:6px 0}
+  .portao .tt{font-size:15px;font-weight:600;color:var(--ambar-txt)}
+  .portao .ds{font-size:12.5px;color:var(--ambar-txt);margin-top:3px}
+  .passos{border:1px solid var(--borda);border-top:none;border-radius:0 0 6px 6px;padding:14px 18px;margin-bottom:6px;background:#FCFCFB}
+  .passos.solo{border-top:1px dashed var(--borda);border-radius:8px;margin-top:14px}
+  .passos h4{font-size:13px;font-weight:600;color:var(--texto);margin-bottom:8px}
+  .passos ol{margin-left:20px;font-size:12.5px;color:var(--texto-sec);line-height:1.7}
+  .passos code{font-family:"Consolas","Courier New",monospace;font-size:12px;background:var(--cinza-claro);padding:1px 5px;border-radius:4px;color:var(--texto)}
+  .nota{font-size:12.5px;color:var(--texto-sec);background:var(--cinza-claro);border-radius:6px;padding:10px 14px;margin:14px 0}
+  .nota strong{color:var(--texto)}
+  .base{margin-top:28px;padding-top:18px;border-top:1px solid var(--borda)}
+  .base h2{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--texto-sec);margin-bottom:10px}
+  .base ul{list-style:none;display:grid;gap:8px}
+  .base li{font-size:12.5px;color:var(--texto-sec);line-height:1.5;padding-left:96px;position:relative}
+  .base li span{position:absolute;left:0;top:0;font-weight:600;color:var(--verde);font-size:11.5px}
+  footer{margin-top:26px;padding-top:14px;border-top:1px solid var(--borda);font-size:11.5px;color:var(--texto-sec);text-align:center}
+  @media print{
+    body{background:#fff;padding:0}
+    .folha{border:none;border-radius:0;max-width:none;padding:22px 26px}
+    .doc,.portao,.quadro,.passos{break-inside:avoid}
+    .etapa{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+<div class="folha">
+  <header>
+    <div class="brasao">IFSP</div>
+    <div class="id">
+      <strong>Instituto Federal de São Paulo — Câmpus Salto</strong><br>
+      Coordenadoria de Gestão de Pessoas (CGP-SLT)<br>
+      Fundamento: Portaria Normativa nº 52/2022 - RET/IFSP
+    </div>
+  </header>
+
+  <h1>Jornada de Trabalho Flexibilizada — Guia completo de documentos</h1>
+  <p class="sub">Cada documento aparece com o que é (cartão) e, logo abaixo, o passo a passo no SUAP.</p>
+
+  <div class="obs">
+    <strong>Quem abre cada processo:</strong> o <strong>processo do setor</strong> é aberto pela <strong>chefia imediata</strong>, e o requerimento de adesão setorial é anexado a ele já <strong>assinado pela Direção-Geral</strong>. Depois da autorização do Reitor, <strong>cada servidor</strong> abre o seu <strong>processo pessoal</strong> e registra os documentos indicados na Etapa 2.
+  </div>
+
+  <p class="leitura"><strong>Leitura recomendada:</strong>
+    <a href="https://drive.ifsp.edu.br/s/WHiCiNVvbr2QLTY?dir=/&editing=false&openfile=true">Portaria 52/2022 - Jornada Flexibilizada de Trabalho (30h)</a> ·
+    <a href="https://www.ifsp.edu.br/images/dgp/Comunicados/2022/Comunicado-32-2022-DGP.pdf">Comunicado 32/2022 - DGP-PRD/PRO-PRD/RET/IFSP</a>
+  </p>
+
+  <div style="border:1px solid #B5D4F4;border-left:4px solid #185FA5;border-radius:8px;padding:16px 18px;margin:24px 0 14px;background:#E6F1FB">
+    <div style="font-size:15px;font-weight:600;color:#0C447C;margin-bottom:6px">Pré-requisito — estar lotado no setor (Alteração de Setor)</div>
+    <p style="font-size:13px;color:#0C447C;line-height:1.55;margin-bottom:12px">Para entrar na escala da jornada flexibilizada, o servidor precisa estar em <strong>exercício integral no respectivo setor</strong> (Art. 5º, parágrafo único). Se ainda não estiver lotado no setor que fará a jornada, deve primeiro solicitar a <strong>alteração de setor</strong>, que é a mudança de setor dentro do mesmo câmpus ou pró-reitoria de lotação e constitui ato de decisão da Administração.</p>
+    <div style="background:#fff;border:1px solid #B5D4F4;border-radius:6px;padding:12px 14px">
+      <dl class="grid" style="display:grid;grid-template-columns:130px 1fr;gap:5px 14px;font-size:12.5px">
+        <dt style="color:var(--texto-sec)">Modelo SUAP</dt><dd><span class="mod">PESSOAL: CADASTRO - REQUERIMENTO - ALTERAÇÃO DE SETOR</span></dd>
+        <dt style="color:var(--texto-sec)">Caminho</dt><dd><span class="mod" style="background:#E6F1FB">Documentos/Processos › Documentos Eletrônicos › Adicionar Documento de Texto › Requerimento › Modelo</span></dd>
+        <dt style="color:var(--texto-sec)">Nível de acesso</dt><dd>Restrito</dd>
+        <dt style="color:var(--texto-sec)">Setor dono</dt><dd>Setor de exercício do servidor</dd>
+        <dt style="color:var(--texto-sec)">Enviar para</dt><dd>No câmpus, à Gestão de Pessoas (CGP-SLT); na Reitoria, à CCP-DGP</dd>
+      </dl>
+    </div>
+    <p style="font-size:12.5px;color:#0C447C;line-height:1.5;margin-top:10px"><strong>Importante:</strong> todos os servidores que irão aderir devem estar lotados no mesmo setor que fará a jornada flexibilizada. Sem essa regularização, o servidor não pode compor a escala.</p>
+  </div>
+
+  <div class="etapa" style="--et:var(--verde)"><span>Etapa 1</span> · Processo do setor — aberto pela chefia imediata</div>
+
+  <div class="quadro">
+    <h3>Dados do processo (SUAP)</h3>
+    <dl class="meta">
+      <dt>Tipo de processo</dt><dd>Jornada Flexibilizada – Atendimento Ininterrupto <em>(um processo por setor)</em></dd>
+      <dt>Quem abre</dt><dd>Chefia imediata do setor</dd>
+      <dt>Interessados</dt><dd>Os servidores do setor que irão aderir</dd>
+      <dt>Encaminhamento</dt><dd>Direção-Geral → PRO-PRD → Reitoria</dd>
+    </dl>
+  </div>
+
+  <p style="font-size:13px;font-weight:600;margin:4px 2px 6px;color:var(--texto-sec)">Documentos que a chefia registra no processo do setor:</p>
+
+  <div class="doc" style="--dc:var(--verde)">
+    <span class="n">1</span><span class="tt">Requerimento de adesão setorial</span>
+    <dl class="grid">
+      <dt>Modelo SUAP</dt><dd><span class="mod">PESSOAL: REQUERIMENTO - ADESÃO SETORIAL DE JORNADA DE TRABALHO FLEXIBILIZADA - ATENDIMENTO ININTERRUPTO</span></dd>
+      <dt>Assinatura</dt><dd>Direção-Geral</dd>
+      <dt>Conteúdo</dt><dd>Fundamentação do interesse público, atividades de atendimento ao público e necessidade de atender ininterruptamente no mínimo 12h diárias</dd>
+      <dt>Base legal</dt><dd><span class="badge b-verde">Art. 5º, I</span></dd>
+    </dl>
+  </div>
+  <div class="passos">
+    <h4>Passo a passo no SUAP — 1) criar o requerimento de adesão setorial</h4>
+    <ol>
+      <li>Acesse <code>Documentos/Processos › Documentos Eletrônicos › Documentos › Adicionar Documento de Texto</code></li>
+      <li>Tipo do Documento: <code>Requerimento</code> · Modelo: <code>PESSOAL: REQUERIMENTO - ADESÃO SETORIAL DE JORNADA DE TRABALHO FLEXIBILIZADA - ATENDIMENTO ININTERRUPTO</code> · Assunto: <code>Jornada de Trabalho Flexibilizada</code> · Nível de Acesso: <code>Público</code> · Setor Dono: o seu setor</li>
+      <li><code>Salvar › Editar (Texto)</code> e preencha: identificação do Diretor-Geral, o setor que vai aderir (marque na lista), a fundamentação do interesse público, as atividades de atendimento e a declaração da escala</li>
+      <li><code>Salvar e Visualizar › Concluir</code></li>
+      <li><code>Assinaturas › Solicitar Assinatura</code> do Diretor-Geral › <code>Enviar solicitação</code></li>
+      <li>Após a assinatura do Diretor-Geral: <code>Finalizar Documento</code></li>
+    </ol>
+  </div>
+
+  <div class="doc" style="--dc:var(--verde)">
+    <span class="n">2</span><span class="tt">Escala / horário do setor</span>
+    <dl class="grid">
+      <dt>Formato</dt><dd>Documento anexo com o nome dos servidores e o horário a ser cumprido por cada um</dd>
+      <dt>Regra da escala</dt><dd>Somente servidores em exercício integral no setor (não pode incluir quem atua em outro setor ou em dois setores ao mesmo tempo)</dd>
+      <dt>Base legal</dt><dd><span class="badge b-verde">Art. 5º, II e parágrafo único</span></dd>
+    </dl>
+  </div>
+  <div class="passos">
+    <h4>Passo a passo — 2) preparar e anexar a escala / horário do setor</h4>
+    <p style="font-size:12.5px;color:var(--texto-sec);margin-bottom:8px">Como deve ser: uma tabela com o nome de cada servidor, o cargo e o horário de segunda a sexta (entrada e saída), cobrindo no mínimo 12h ininterruptas de atendimento. Somente servidores em exercício integral no setor.</p>
+    <ol>
+      <li>Preencha a planilha de horário do setor (modelo do câmpus) e salve em PDF</li>
+      <li>Acesse <code>Documentos/Processos › Documentos Eletrônicos › Documentos › Carregar Documento Externo (Upload)</code></li>
+      <li>Tipo do Documento: <code>Anexo</code> · Assunto: <code>Horário dos servidores do setor</code> · Nível de Acesso: <code>Público</code> · selecione o arquivo PDF</li>
+      <li><code>Salvar</code> e autentique o documento</li>
+    </ol>
+  </div>
+
+  <div class="doc" style="--dc:var(--verde)">
+    <span class="n">3</span><span class="tt">Portaria Normativa nº 52/2022 - RET/IFSP</span>
+    <dl class="grid">
+      <dt>Formato</dt><dd>Anexo (a norma que regulamenta a jornada flexibilizada)</dd>
+      <dt>Base legal</dt><dd><span class="badge b-verde">Norma de referência</span></dd>
+    </dl>
+  </div>
+  <div class="passos">
+    <h4>Passo a passo — 3) anexar a Portaria Normativa nº 52/2022</h4>
+    <ol>
+      <li>Baixe o PDF da Portaria 52/2022 (link de leitura recomendada, no topo do guia)</li>
+      <li>Acesse <code>Documentos/Processos › Documentos Eletrônicos › Documentos › Carregar Documento Externo (Upload)</code></li>
+      <li>Tipo do Documento: <code>Portaria</code> · Assunto: <code>Portaria Normativa - Jornada Flexibilizada</code> · Nível de Acesso: <code>Público</code> · selecione o arquivo PDF</li>
+      <li><code>Salvar</code> e autentique o documento</li>
+    </ol>
+  </div>
+
+  <div class="doc" style="--dc:var(--verde)">
+    <span class="n">4</span><span class="tt">Ofício assinado pelos interessados</span>
+    <dl class="grid">
+      <dt>Formato</dt><dd>Ofício com a manifestação e a assinatura de todos os servidores que irão aderir à jornada</dd>
+      <dt>Encaminhamento</dt><dd>Após reunir os documentos, o processo segue para a Direção-Geral</dd>
+    </dl>
+  </div>
+  <div class="passos">
+    <h4>Passo a passo — 4) anexar o ofício assinado pelos interessados</h4>
+    <ol>
+      <li>Salve o ofício assinado em PDF</li>
+      <li>Acesse <code>Documentos/Processos › Documentos Eletrônicos › Documentos › Carregar Documento Externo (Upload)</code></li>
+      <li>Tipo do Documento: <code>Ofício</code> · Assunto: <code>Jornada de Trabalho Flexibilizada</code> · Nível de Acesso: <code>Público</code> · selecione o arquivo PDF</li>
+      <li><code>Salvar</code> e autentique o documento</li>
+    </ol>
+  </div>
+
+  <div class="passos solo">
+    <h4>Passo a passo — 5) montar o processo e encaminhar</h4>
+    <ol>
+      <li>Acesse <code>Processos › Adicionar Processo Eletrônico</code></li>
+      <li>Tipo de Processo: <code>Jornada Flexibilizada – Atendimento Ininterrupto</code> · Assunto: <code>Jornada de Trabalho Flexibilizada</code> · Interessados: os servidores do setor · Nível de Acesso: <code>Público</code> · Setor de Criação: o seu setor</li>
+      <li><code>Salvar</code></li>
+      <li>Adicione o requerimento setorial (texto) por <code>Adicionar Documento Interno</code>; e a escala/horário, a Portaria e o ofício (carregados) por <code>Adicionar Documento Externo</code></li>
+      <li>Faça o despacho e <code>Encaminhar</code> para a Direção-Geral</li>
+    </ol>
+  </div>
+
+  <div class="seta">&#9660;</div>
+  <div class="portao">
+    <div class="tt">Autorização do Reitor</div>
+    <div class="ds">O servidor só pode aderir após esta autorização — Art. 9º</div>
+  </div>
+  <div class="seta">&#9660;</div>
+
+  <div class="etapa roxa"><span>Etapa 2</span> · Processo pessoal — aberto por cada servidor</div>
+
+  <div class="quadro">
+    <h3>Dados do processo (SUAP)</h3>
+    <dl class="meta">
+      <dt>Tipo de processo</dt><dd>Pessoal: Jornada de Trabalho Flexibilizada – Atendimento Ininterrupto</dd>
+      <dt>Interessado</dt><dd>O próprio servidor</dd>
+      <dt>Assunto</dt><dd>Jornada de Trabalho Flexibilizada</dd>
+      <dt>Nível de acesso</dt><dd>Restrito</dd>
+      <dt>Hipótese legal</dt><dd>Informação Pessoal – dados pessoais e dados pessoais sensíveis (Art. 31 da Lei nº 12.527/2011)</dd>
+      <dt>Setor de criação</dt><dd>Setor de exercício do servidor</dd>
+      <dt>Encaminhamento</dt><dd>Sem despacho, para a CGP-SLT</dd>
+    </dl>
+  </div>
+
+  <p style="font-size:13px;font-weight:600;margin:4px 2px 6px;color:var(--texto-sec)">Documentos que cada servidor registra no seu processo pessoal:</p>
+
+  <div class="doc" style="--dc:var(--roxo)">
+    <span class="n">1</span><span class="tt">Requerimento de Jornada Flexibilizada</span>
+    <dl class="grid">
+      <dt>Modelo SUAP</dt><dd><span class="mod">Pessoal: Requerimento - Jornada de Trabalho Flexibilizada - Atendimento Ininterrupto</span></dd>
+      <dt>Assunto</dt><dd>Jornada de Trabalho Flexibilizada</dd>
+      <dt>Assinaturas</dt><dd>Servidor, chefia imediata e Direção-Geral</dd>
+      <dt>Base legal</dt><dd><span class="badge b-roxo">Art. 9º, parágrafo único</span></dd>
+    </dl>
+  </div>
+  <div class="passos">
+    <h4>Passo a passo — criar o requerimento de Jornada Flexibilizada</h4>
+    <ol>
+      <li>Acesse <code>Documentos/Processos › Documentos Eletrônicos › Documentos › Adicionar Documento de Texto</code></li>
+      <li>Tipo do Documento: <code>Requerimento</code> · Modelo: <code>Pessoal: Requerimento - Jornada de Trabalho Flexibilizada - Atendimento Ininterrupto</code> · Assunto: <code>Jornada de Trabalho Flexibilizada</code></li>
+      <li><code>Salvar › Editar (Texto) › Salvar e Visualizar › Concluir</code></li>
+      <li><code>Assinar (Com Senha) › Definir Identificador › Assinar Documento</code></li>
+      <li><code>Solicitar Assinatura</code> da chefia imediata e da Direção-Geral › <code>Enviar solicitações</code></li>
+      <li>Após todos assinarem: <code>Finalizar Documento</code></li>
+    </ol>
+  </div>
+
+  <div class="doc" style="--dc:var(--roxo)">
+    <span class="n">2</span><span class="tt">Requerimento de Horário de Trabalho</span>
+    <dl class="grid">
+      <dt>Modelo SUAP</dt><dd><span class="mod">Pessoal: Cadastro - Requerimento – Horário de Trabalho – Técnico Administrativo</span></dd>
+      <dt>Assunto</dt><dd>Horário de Trabalho</dd>
+      <dt>Assinaturas</dt><dd>Servidor, chefia imediata e Direção-Geral</dd>
+      <dt>Conteúdo</dt><dd>Horário individual de trabalho do servidor (dias, entradas e saídas)</dd>
+    </dl>
+  </div>
+  <div class="passos">
+    <h4>Passo a passo — criar o requerimento de Horário de Trabalho</h4>
+    <ol>
+      <li>Acesse <code>Documentos/Processos › Documentos Eletrônicos › Documentos › Adicionar Documento de Texto</code></li>
+      <li>Tipo do Documento: <code>Requerimento</code> · Modelo: <code>Pessoal: Cadastro - Requerimento – Horário de Trabalho – Técnico Administrativo</code> · Assunto: <code>Horário de Trabalho</code></li>
+      <li><code>Salvar › Editar (Texto) › Salvar e Visualizar › Concluir</code></li>
+      <li><code>Assinar (Com Senha) › Definir Identificador › Assinar Documento</code></li>
+      <li><code>Solicitar Assinatura</code> da chefia imediata e da Direção-Geral › <code>Enviar solicitações</code></li>
+      <li>Após todos assinarem: <code>Finalizar Documento</code></li>
+    </ol>
+  </div>
+
+  <div class="passos solo">
+    <h4>Passo a passo — criar o processo pessoal e encaminhar</h4>
+    <ol>
+      <li>Acesse <code>Processos › Adicionar Processo Eletrônico</code> e preencha os dados do quadro acima</li>
+      <li><code>Salvar</code></li>
+      <li><code>Adicionar Documento Interno</code> › o requerimento de Jornada Flexibilizada › adicionar ao processo</li>
+      <li><code>Adicionar Documento Interno</code> › o requerimento de Horário de Trabalho › adicionar ao processo</li>
+      <li><code>Encaminhar (sem despacho)</code> para a <strong>CGP-SLT</strong></li>
+    </ol>
+  </div>
+
+  <div class="nota">
+    <strong>Exclusão da jornada:</strong> para sair do regime flexibilizado, o servidor preenche o mesmo <span class="mod">Pessoal: Requerimento - Jornada de Trabalho Flexibilizada - Atendimento Ininterrupto</span>, marcando a opção de exclusão, e encaminha à CGP-SLT.
+  </div>
+
+  <div class="base">
+    <h2>Base normativa aplicável o tempo todo</h2>
+    <ul>
+      <li><span>Art. 2º</span>Jornada de 30h semanais e 6h diárias, em regime de turnos ou escalas, com atendimento ininterrupto de no mínimo 12h e dispensa do intervalo para refeição.</li>
+      <li><span>Art. 2º §§ 4º e 5º</span>A escala mensal é decidida pelo dirigente da unidade e só pode ser alterada uma vez por semana.</li>
+      <li><span>Art. 6º</span>O acompanhamento e a avaliação da flexibilização cabem à Direção-Geral.</li>
+      <li><span>Art. 10</span>A jornada é suspensa em caso de mudança para setor não autorizado, afastamentos ou licenças que impeçam o atendimento presencial, entre outras situações.</li>
+      <li><span>Art. 11</span>É vedada a concessão a ocupantes de cargos de direção ou funções gratificadas (FG/CD).</li>
+    </ul>
+  </div>
+
+  <footer>
+    CGP – Coordenadoria de Gestão de Pessoas · IFSP – Câmpus Salto · com base na Portaria Normativa nº 52/2022 - RET/IFSP
+  </footer>
+</div>
+</body>
+</html>
